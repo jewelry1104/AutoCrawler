@@ -131,6 +131,10 @@ class AutoCrawler:
     @staticmethod
     def get_keywords(keywords_file='keywords.txt'):
         # read search keywords from file
+        with open(keywords_file, 'w', encoding='utf-8-sig') as f:
+            i = input("키워드를 입력하시오: ")
+            f.write(i)
+
         with open(keywords_file, 'r', encoding='utf-8-sig') as f:
             text = f.read()
             lines = text.split('\n')
